@@ -9,8 +9,8 @@ maintainer:         richard.rafaideen@gmail.com
 
 extra-source-files: CHANGELOG.md
 
-executable my-app
-    main-is:          Main.hs
+common settings
+    default-language: Haskell2010
     build-depends:    
         base ^>=4.14.3.0,
         wai  >= 3.2.3,
@@ -18,6 +18,13 @@ executable my-app
         http-types,
         directory,
         text
-        
-    hs-source-dirs:   app
-    default-language: Haskell2010
+
+library
+    import:           settings
+    hs-source-dirs:   lib
+
+executable my-app
+    import:           settings  
+    main-is:          Main.hs
+    hs-source-dirs:   app, lib
+    other-modules:    Middleware.Common
