@@ -27,4 +27,6 @@ executable my-app
     import:           settings  
     main-is:          Main.hs
     hs-source-dirs:   app, lib
-    other-modules:    Middleware.Common
+    other-modules:    
+        Middleware.Common,
+        Middleware.Router

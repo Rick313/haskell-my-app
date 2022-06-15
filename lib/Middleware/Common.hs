@@ -1,9 +1,9 @@
-module Middleware.Common (logger, static) where 
+module Middleware.Common (logger, static) where
 
 import Network.Wai
 import Network.HTTP.Types (status200)
-import Data.Text (isPrefixOf, pack, unpack)
 import System.Directory (doesFileExist)
+import Data.Text (isPrefixOf, pack, unpack)
 
 -- | Print each request "[Method HTTP] - pathname"
 logger :: Middleware
